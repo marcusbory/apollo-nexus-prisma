@@ -8,7 +8,11 @@ export const DraftQuery = queryField('draftsQuery', {
   args: {},
   resolve: async (_parent, _args, context: Context) => {
     try {
-      return context.db.posts.filter(p => !p.published)
+      return context.db.post.findMany({
+        where: {
+          published: false
+        }
+      })
     } catch (e) {
       console.error(e)
     }
