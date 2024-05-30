@@ -1,0 +1,7 @@
+node_modules
+.env
+
+# Database stuff
+.mysql
+*.db
+.DS_Store
